@@ -6,12 +6,16 @@ namespace bivaa_server_main.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
     using Newtonsoft.Json;
+    
+  
+    using System.Data.Entity;
+    using System.Linq;
 
 
     [Table("vaa.patient")]
     public partial class patient
     {
-        
+        //public virtual DbSet<patient> patient { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }

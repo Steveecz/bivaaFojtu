@@ -1,4 +1,5 @@
 ﻿using bivaa_server_main.Core;
+using bivaa_server_main.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,27 +11,27 @@ namespace bivaa_server_main.Services
     {
         public List<patient> GetAllPatient()
         {
-            using (var db = new AppDbContext())
+            using (var db = new ModelFojtu())
             {
                 var patients = (from tx in db.patient select tx).ToList();
                 return patients;
             }
         }
-       
 
         public patient GetPatientById(int id)
         {
-            using (var db = new AppDbContext())
+            using (var db = new ModelFojtu())
             {
-                var patient = (from tx in db.tax_rate where tx.id == id select tx).SingleOrDefault();
+                var patient = (from tx in db.patient where tx.ID == id select tx).SingleOrDefault();
                 return patient;
             }
         }
+
         public patient CreatePatient(patient patient)
         {
-            using (var db = new AppDbContext())
+            using (var db = new ModelFojtu())
             {
-                db.tax_rate.Add(patient);
+                db.patient.Add(patient);
                 db.SaveChanges();
                 return patient;
             }
@@ -38,9 +39,9 @@ namespace bivaa_server_main.Services
 
         public void DeletePatient(int id)
         {
-            using (var db = new AppDbContext())
+            using (var db = new ModelFojtu())
             {
-                var patient = new patient { id = id };
+                var patient = new patient { ID = id };
                 db.patient.Attach(patient);
                 db.patient.Remove(patient);
                 db.SaveChanges();
@@ -52,7 +53,7 @@ namespace bivaa_server_main.Services
             var patient = GetPatientById(id);
             if (patient != null)
             {
-                using (var db = new AppDbContext())
+                using (var db = new ModelFojtu())
                 {
                     patient.name = requestpatient.name;
                     patient.diagnose = requestpatient.diagnose;
