@@ -11,8 +11,8 @@ namespace bivaa_server_main.Utils
     public static class Extensions
     {
         public static string toJson(this object obj) => JsonConvert.SerializeObject(obj);
-
-      /*  public static string toJson(this tax_rate taxRate)
+        /*
+        public static string toJson(this tax_rate taxRate)
         {
             dynamic result = new JObject();
             result.Id = taxRate.id;
@@ -23,11 +23,11 @@ namespace bivaa_server_main.Utils
             //result.SomeArray = JArray("1", "2", "3", ...);
             //result.SomeArray = JArray(JObject(...), JObject(...), ...)
             return Convert.ToString(result);
-        }*/
+        }
 
         // Muze byt i jedna genericka metoda pro serializaci podle object typu viz nize
         // switch case typ input objektu a podle vysledku sestaveni dynamic resultu a convert do json
-        /*public static string toJson<T>(this T obj)
+        public static string toJson<T>(this T obj)
         {
             dynamic result;
             switch (obj.GetType().Name)
@@ -56,7 +56,7 @@ namespace bivaa_server_main.Utils
                     }
             }
             return result.toJson();
-        }*/
+        } */
 
         public static T fromJson<T>(this string obj)
         {

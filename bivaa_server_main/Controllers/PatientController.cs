@@ -1,5 +1,6 @@
 ﻿using bivaa_server_main.Core;
 using bivaa_server_main.Utils;
+using bivaa_server_main.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace bivaa_server_main.Controllers
         [ActionName("detail")]
         public HttpResponseMessage GetDetail(int id)
         {
-            var patient = patient.GetPatientById(id);
+            var patient = PatientService.GetPatientById(id);
             return commonService.GetResponse(patient.toJson());
         }
 
