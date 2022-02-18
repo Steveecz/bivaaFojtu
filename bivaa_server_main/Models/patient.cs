@@ -18,7 +18,7 @@ namespace bivaa_server_main.Models
         //public virtual DbSet<patient> patient { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ID { get; set; }
+        public int id { get; set; }
 
         [StringLength(45)]
         public string name { get; set; }

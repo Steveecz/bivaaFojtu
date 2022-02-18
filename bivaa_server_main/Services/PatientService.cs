@@ -22,7 +22,7 @@ namespace bivaa_server_main.Services
         {
             using (var db = new ModelFojtu())
             {
-                var patient = (from tx in db.patient where tx.ID == id select tx).SingleOrDefault();
+                var patient = (from tx in db.patient where tx.id == id select tx).SingleOrDefault();
                 return patient;
             }
         }
@@ -41,7 +41,7 @@ namespace bivaa_server_main.Services
         {
             using (var db = new ModelFojtu())
             {
-                var patient = new patient { ID = id };
+                var patient = new patient { id = id };
                 db.patient.Attach(patient);
                 db.patient.Remove(patient);
                 db.SaveChanges();

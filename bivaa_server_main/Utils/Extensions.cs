@@ -16,7 +16,7 @@ namespace bivaa_server_main.Utils
         public static string toJson(this patient patient)
         {
             dynamic result = new JObject();
-            result.ID = patient.ID;
+            result.id = patient.id;
             result.name = patient.name;
             result.diagnose = patient.diagnose;
             result.room = patient.room;
