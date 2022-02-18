@@ -67,8 +67,8 @@ namespace bivaa_server_main.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-          //  kernel.Bind<ITaxRateService>().To<TaxRateService>();
-            //kernel.Bind<TaxRateService>().To<TaxRateService>().InSingletonScope();
+            kernel.Bind<IPatientService>().To<PatientService>();
+            kernel.Bind<PatientService>().To<PatientService>().InSingletonScope();
 
             kernel.Bind<ICommonService>().To<CommonService>();
             kernel.Bind<CommonService>().To<CommonService>().InSingletonScope();

@@ -5,26 +5,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Web;
+using bivaa_server_main.Models;
 
 namespace bivaa_server_main.Utils
 {
     public static class Extensions
     {
         public static string toJson(this object obj) => JsonConvert.SerializeObject(obj);
-        /*
-        public static string toJson(this tax_rate taxRate)
+        
+        public static string toJson(this patient patient)
         {
             dynamic result = new JObject();
-            result.Id = taxRate.id;
-            result.Code = taxRate.code;
-            result.Name = taxRate.name;
-            result.Rate = taxRate.rate;
+            result.Id = patient.ID;
+            result.Name = patient.name;
+            result.Diagnose = patient.diagnose;
             // list se da pak udelat napriklad takto
             //result.SomeArray = JArray("1", "2", "3", ...);
             //result.SomeArray = JArray(JObject(...), JObject(...), ...)
             return Convert.ToString(result);
         }
-
+        /*
         // Muze byt i jedna genericka metoda pro serializaci podle object typu viz nize
         // switch case typ input objektu a podle vysledku sestaveni dynamic resultu a convert do json
         public static string toJson<T>(this T obj)

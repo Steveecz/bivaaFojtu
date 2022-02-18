@@ -12,7 +12,7 @@ namespace bivaa_server_main.Models
     using System.Linq;
 
 
-    [Table("vaa.patient")]
+    [Table("patient")]
     public partial class patient
     {
         //public virtual DbSet<patient> patient { get; set; }
