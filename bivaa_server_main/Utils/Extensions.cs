@@ -16,9 +16,11 @@ namespace bivaa_server_main.Utils
         public static string toJson(this patient patient)
         {
             dynamic result = new JObject();
-            result.Id = patient.ID;
-            result.Name = patient.name;
-            result.Diagnose = patient.diagnose;
+            result.ID = patient.ID;
+            result.name = patient.name;
+            result.diagnose = patient.diagnose;
+            result.room = patient.room;
+
             // list se da pak udelat napriklad takto
             //result.SomeArray = JArray("1", "2", "3", ...);
             //result.SomeArray = JArray(JObject(...), JObject(...), ...)
