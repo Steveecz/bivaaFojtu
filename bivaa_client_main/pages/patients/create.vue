@@ -18,12 +18,8 @@
             required
         ></v-text-field>
 
-        <v-btn color="success" class="mr-4" @click="submit()">
-            Uložit
-        </v-btn>
-        <v-btn color="primary" nuxt to="/patients">
-        Zpět 
-        </v-btn>
+        <v-btn color="success" class="mr-4" @click="submit()"> Uložit </v-btn>
+        <v-btn color="primary" nuxt to="/patients"> Zpět </v-btn>
     </v-form>
 </template>
 

@@ -15,7 +15,7 @@ namespace bivaa_server_main.Models
     [Table("patient")]
     public partial class patient
     {
-        //public virtual DbSet<patient> patient { get; set; }
+       
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
