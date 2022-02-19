@@ -2,6 +2,7 @@
 using bivaa_server_main.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -58,6 +59,7 @@ namespace bivaa_server_main.Services
                     patient.name = requestpatient.name;
                     patient.diagnose = requestpatient.diagnose;
                     patient.room = requestpatient.room;
+                    db.Entry(patient).State = EntityState.Modified;
                     db.SaveChanges();
                 }
                 return patient;
