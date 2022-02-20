@@ -29,7 +29,7 @@ export default {
 
     css: [],
 
-    plugins: [],
+    plugins: [{ src: '~/plugins/form.client.js' }],
 
     components: true,
 
